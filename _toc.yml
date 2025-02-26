@@ -1,0 +1,19 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: welcome
+parts:
+  - caption: Introduction
+    chapters:
+    - file: syllabus
+    - file: learning_tips
+    - file: assignments
+    - file: faq
+    - file: ai
+    - file: references
+  - caption: Week 01 - Getting started
+    chapters:
+    - file: week_01/01-Installation
+    - file: week_01/02-Why-Program
+    - file: week_01/03-Assignment
