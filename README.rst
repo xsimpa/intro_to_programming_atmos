@@ -7,8 +7,6 @@ Introduction to Programming
 
 Lectures notes of the introduction to programming course taught at the University of Innsbruck.
 
-Website: http://fabienmaussion.info/intro_to_programming
-
 License
 -------
 
