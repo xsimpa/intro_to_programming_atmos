@@ -1,0 +1,741 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Syllabus &#8212; Introduction to Programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'syllabus';</script>
+    <script data-domain="fabienmaussion.info" defer="defer" src="https://plausible.oggm.org/js/script.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Learning tips" href="learning_tips.html" />
+    <link rel="prev" title="Welcome" href="welcome.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="May 26, 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="welcome.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Introduction to Programming - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Introduction to Programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="welcome.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning_tips.html">Learning tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments.html">Homework instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ai.html">Learning with artificial intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">External resources</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 01 - Getting started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week_01/01-Installation.html">Installing Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_01/02-Why-Program.html">Why program?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_01/03-Assignment.html">Assignment 01</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 02 - Gaining speed</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week_02/01-Install-jupyter.html">Installing Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_02/02-Intro-jupyter.html">Introduction to Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_02/03-Lessons.html">Lessons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_02/04-Assignment.html">Assignment 02</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 03 - Control flow</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week_03/01-Intro-notebooks.html">Introduction to Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_03/02-Lessons.html">Lessons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_03/03-Assignment.html">Assignment 03</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 04 - Strings, Files and Lists</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week_04/01-documenting-functions.html">Documenting functions and testing their output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_04/02-Lessons.html">Lessons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_04/03-Assignment.html">Assignment 04</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 05 - Scientific python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week_05/01-install-packages.html">Installing python packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_05/02-jupyter-dos.html">Jupyter notebooks tips and tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_05/03-numpy.html">Introduction to scientific python: numpy and matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_05/04-Assignment.html">Assignment 05</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 06 - Scientific python - continued</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week_06/01-tuples.html">Python tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_06/02-computations.html">Computations with numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_06/03-Assignment.html">Assignment 06</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 07 - Numerics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week_07/01-numerics.html">Numpy as numerical solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_07/02-Assignment.html">Assignment 07</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 08 - Pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week_08/01-dictionaries.html">Python dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_08/02-pandas.html">Pandas: working with tabular data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_08/03-Assignment.html">Assignment 08</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/xsimpa/intro_to_programming_atmos" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/xsimpa/intro_to_programming_atmos/edit/master/book/syllabus.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/xsimpa/intro_to_programming_atmos/issues/new?title=Issue%20on%20page%20%2Fsyllabus.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/syllabus.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Syllabus</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organisation-of-the-class">Organisation of the class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekly-lesson-plan">Weekly lesson plan</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="syllabus">
+<h1>Syllabus<a class="headerlink" href="#syllabus" title="Link to this heading">#</a></h1>
+<p>German: <em>Lehrveranstaltungskonzept</em>. <strong>Please read it carefully at the beginning of the class, and return to it as often as necessary.</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is the first time I’m giving these lecture notes. The syllabus is likely change in the course of the semester, but each change will be communicated in class. It is your responsibility to attend the class to stay informed about any changes.</p>
+</div>
+<section id="learning-outcomes">
+<h2>Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Link to this heading">#</a></h2>
+<p>After successful completion of the course, you will:</p>
+<ul class="simple">
+<li><p>be able to read and write programs in the Python programming language.</p></li>
+<li><p>understand how to use basic programming control flows (branches and loops) and data structures (numbers and collections).</p></li>
+<li><p>know how to write and structure programs of several dozens of lines of code, including scripts and functions.</p></li>
+<li><p>be able to read commonly used data formats in atmospheric sciences (csv, NetCDF), process the data for simple analyses (averages, quality filter), and plot the results of your analyses.</p></li>
+<li><p>have a basic knowledge of formal code testing (pytest, asserts).</p></li>
+<li><p>know how to install a programming environment with appropriate additional packages on your own computer, and use it to solve common programming tasks of the atmospheric sciences.</p></li>
+</ul>
+<p>Most importantly: <strong>you will be able to expand and deepen your programming skills independently</strong>!</p>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<p>The targeted audience for this lecture are <strong>students at the bachelor level without previous experience in programming</strong>. A background in atmospheric sciences (introduction lecture) is desireable, with some knowledge of math and physics, and interest for scientific analysis and number crunching!</p>
+</section>
+<section id="organisation-of-the-class">
+<h2>Organisation of the class<a class="headerlink" href="#organisation-of-the-class" title="Link to this heading">#</a></h2>
+<p>The class is taught in English. But it is okay to ask questions in German!</p>
+<p>This class follows the <a class="reference external" href="https://en.wikipedia.org/wiki/Flipped_classroom">flipped classroom</a> model. You will acquire new knowledge at home by reading online materials (and watching videos when appropriate). This will allow to use the time together in class more efficiently to discuss the materials and write code.</p>
+<br>
+<p>The semester is 15 weeks long. <strong>Each week will always be organised as such</strong>:</p>
+<ul class="simple">
+<li><p><strong>On Tuesdays (08h15-10h00):</strong> We begin the lecture with a short, individual online assessment to check if you understood the materials that you will have reviewed at home correctly. Based on your own assessment, you choose the topics and questions you would like to discuss in class. I can  delve deeper into specific topics, or present small exercises to help reinforce the key concepts. At the end, you’ll receive instructions on the materials to read or watch for the following week.</p></li>
+<li><p><strong>On Wednesdays (08h15-09h00):</strong> We meet to discuss the assignment solutions (assignments are mandatory but not graded, see “Grading” below). At the end of the class, you’ll receive instructions for the next homework assignment.</p></li>
+<li><p><strong>New week: start again!</strong></p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The class grants you 5 ECTS if successfully passed: in theory, this represents 8 to 10 hours work per week (not including holidays). For this course, it means that you will spend at least twice as much time doing homework than sitting in class.</p>
+<p>I strongly recommend to work regularly for the class. Programming is quite different to other disciplines, and “doing nothing for a few months” cannot be replaced by a “no-sleep-48-hours-push” at the end of semester. Programming is a bit like learning how to ski or climb: it is best learned by doing, and you will notice that regular practice will make you better each week.</p>
+</div>
+</section>
+<section id="grading">
+<h2>Grading<a class="headerlink" href="#grading" title="Link to this heading">#</a></h2>
+<p>The lecture will be graded based on four elements:</p>
+<ol class="arabic simple">
+<li><p><strong>participation to the weekly assignments</strong> (mandatory but not graded)</p></li>
+<li><p><strong>mid-term exam: 10%</strong> (Tue 2025-05-06)</p></li>
+<li><p><strong>a programming project at the end of the semester: 30%</strong> (in group)</p></li>
+<li><p><strong>final exam at the end of the semester: 60%</strong> (Tue 2025-06-24)</p></li>
+</ol>
+<p>A positive evaluation of each of these elements is mandatory to pass the class!</p>
+<p><strong>Weekly assignments</strong></p>
+<p>Each Wednesday, we will discuss the weekly assignment solutions together. Before the class, each student will have to upload their solution to OLAT (deadline 08h00). I will then select one or two solutions (at random) as a basis for the class discussion. This assignment is <strong>not</strong> graded, and it’s okay (or even expected!) to make mistakes. However, it is mandatory to upload your solution each week (you have two “jokers” that you may use at your wish during the semester). The mandatory exercises start at week 02.</p>
+<p><strong>Programming project</strong></p>
+<p>At the end of the semester, you will be given a programming project to realize over two weeks. Ideally, it will be a project that raises your interest: plotting climate or (live) weather data, etc. The grading will be explained once the project starts.</p>
+<p><strong>Mid-term exam</strong></p>
+<p>The mid-term exam (~45’, OLAT-exam with presence in class) will take place on <strong>Tue 2025-05-06 at 08:15</strong>.</p>
+<p><strong>Exam</strong></p>
+<p>The final exam (~90’, OLAT-exam with presence in class) will take place on <strong>Tue 2025-06-24 at 08:15</strong>.</p>
+</section>
+<section id="weekly-lesson-plan">
+<h2>Weekly lesson plan<a class="headerlink" href="#weekly-lesson-plan" title="Link to this heading">#</a></h2>
+<p>The first half of the class will be heavily based on the “<a class="reference external" href="https://www.py4e.com">Python for Everybody (PY4E)</a>” online textbook, which will teach us most of the fundamentals. Towards the second half of the semester, we will shift our focus towards <strong>scientific python</strong>, which can be seen as a special “branch” of the language.</p>
+<ul class="simple">
+<li><p>Week 01 (04.03.25 - 10.03.25)</p>
+<ul>
+<li><p>Welcome! Motivation &amp; syllabus</p></li>
+<li><p><a class="reference internal" href="week_01/01-Installation.html"><span class="doc std std-doc">Installing Python</span></a></p></li>
+<li><p><a class="reference external" href="https://www.py4e.com/lessons/intro">PY4E: Why program</a></p></li>
+</ul>
+</li>
+<li><p>Week 02 (11.03.25 - 17.03.25)</p>
+<ul>
+<li><p><a class="reference external" href="https://www.py4e.com/lessons/memory">PY4E: Variables, expressions and statements</a></p></li>
+<li><p><a class="reference external" href="https://www.py4e.com/lessons/logic">PY4E: Conditional Execution</a></p></li>
+<li><p><a class="reference internal" href="week_02/02-Intro-jupyter.html"><span class="doc std std-doc">Using Jupyter</span></a></p></li>
+</ul>
+</li>
+<li><p>Week 03 (18.03.25 - 24.03.25)</p>
+<ul>
+<li><p><a class="reference internal" href="week_03/01-Intro-notebooks.html"><span class="doc std std-doc">Using Jupyter Notebooks</span></a></p></li>
+<li><p><a class="reference external" href="https://www.py4e.com/lessons/functions">PY4E: Functions</a></p></li>
+<li><p><a class="reference external" href="https://www.py4e.com/lessons/loops">PY4E: Loops and Iterations</a></p></li>
+</ul>
+</li>
+<li><p>Week 04 (25.03.25 - 31.03.25)</p>
+<ul>
+<li><p><a class="reference internal" href="week_04/01-documenting-functions.html"><span class="doc std std-doc">Python functions and doctests</span></a></p></li>
+<li><p><a class="reference external" href="https://www.py4e.com/lessons/strings">PY4E: Strings</a></p></li>
+<li><p><a class="reference external" href="https://www.py4e.com/lessons/files">PY4E: Files</a></p></li>
+<li><p><a class="reference external" href="https://www.py4e.com/lessons/lists">PY4E: Lists</a></p></li>
+</ul>
+</li>
+<li><p>Week 05 (01.04.25 - 07.04.25)</p>
+<ul>
+<li><p><a class="reference internal" href="week_05/01-install-packages.html"><span class="doc std std-doc">Installing Packages</span></a></p></li>
+<li><p><a class="reference internal" href="week_05/02-jupyter-dos.html"><span class="doc std std-doc">More on jupyter notebooks</span></a></p></li>
+<li><p><a class="reference internal" href="week_05/03-numpy.html"><span class="doc std std-doc">Introduction to numpy and matplotlib</span></a></p></li>
+</ul>
+</li>
+<li><p>Week 06 (08.04.25 - 11.04.25)</p>
+<ul>
+<li><p><a class="reference internal" href="week_06/01-tuples.html"><span class="doc std std-doc">Python tuples</span></a></p></li>
+<li><p><a class="reference internal" href="week_06/02-computations.html"><span class="doc std std-doc">numpy - continued: computations</span></a></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Easter break and out-of-office for a conference (14.04.2025 - 04.05.2025)</strong></p>
+<p><strong>Mid-term-exam (06.05.2025)</strong></p>
+<ul class="simple">
+<li><p>Week 07 (13.05.25 - 19.05.25)</p>
+<ul>
+<li><p><a class="reference internal" href="week_07/01-numerics.html"><span class="doc std std-doc">numpy - continued: numerics</span></a></p></li>
+</ul>
+</li>
+<li><p>Week 08 (20.05.25 - 26.05.25)</p>
+<ul>
+<li><p><a class="reference internal" href="week_08/01-dictionaries.html"><span class="doc std std-doc">python dictionaries</span></a></p></li>
+<li><p><a class="reference internal" href="week_08/02-pandas.html"><span class="doc std std-doc">Pandas - manipulating tabular data</span></a></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Start projects: 26.05.2023. Submission deadline: 06.06.2023.</strong></p>
+<ul class="simple">
+<li><p>Week 09 (03.06.25 - 09.06.25)</p>
+<ul>
+<li><p><a class="reference internal" href="#week_09/01-multidim-numpy"><span class="xref myst">numpy - continued: multi dimensional arrays</span></a></p></li>
+</ul>
+</li>
+<li><p>Week 10 (10.06.25 - 16.06.23)</p>
+<ul>
+<li><p><a class="reference internal" href="#week_10/01-scientific-python"><span class="xref myst">Scientific python</span></a></p></li>
+<li><p><a class="reference internal" href="#cookbook/intro"><span class="xref myst">Recipes</span></a></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Final exam: 24.06.2025</strong></p>
+<p>You will notice that there are 10 weekly units for a 15 weeks long semester: this is expected since some weeks contain holidays or I am traveling. Furthermore, some weeks will be kept free to work on your projects or learn for the exams.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="welcome.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="learning_tips.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Learning tips</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organisation-of-the-class">Organisation of the class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekly-lesson-plan">Weekly lesson plan</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Patric Simões Pereira
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on May 26, 2025.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img align="right" class="margin" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" width="88px">
+</a>
+These lecture notes and exercises are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International (CC BY 4.0) license</a>.
+<br>
+&copy; Copyright 2025-2030.
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
