@@ -583,6 +583,15 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#your code here</span>
 </pre></div>
 </div>
@@ -695,67 +704,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>**********************************************************************
-File &quot;__main__&quot;, line 15, in __main__.check_wind_dir
-Failed example:
-    int(check_wind_dir(0))
-Exception raised:
-    Traceback (most recent call last):
-      File &quot;C:\Users\c7151096\AppData\Local\miniforge3\envs\maps\Lib\doctest.py&quot;, line 1395, in __run
-        exec(compile(example.source, filename, &quot;single&quot;,
-        ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                     compileflags, True), test.globs)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-      File &quot;&lt;doctest __main__.check_wind_dir[0]&gt;&quot;, line 1, in &lt;module&gt;
-        int(check_wind_dir(0))
-            ~~~~~~~~~~~~~~^^^
-      File &quot;C:\Users\c7151096\AppData\Local\Temp\ipykernel_292\2717570762.py&quot;, line 22, in check_wind_dir
-        direction = np.asanyarray(direction)
-                    ^^
-    NameError: name &#39;np&#39; is not defined
-**********************************************************************
-File &quot;__main__&quot;, line 17, in __main__.check_wind_dir
-Failed example:
-    int(check_wind_dir(360))
-Exception raised:
-    Traceback (most recent call last):
-      File &quot;C:\Users\c7151096\AppData\Local\miniforge3\envs\maps\Lib\doctest.py&quot;, line 1395, in __run
-        exec(compile(example.source, filename, &quot;single&quot;,
-        ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                     compileflags, True), test.globs)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-      File &quot;&lt;doctest __main__.check_wind_dir[1]&gt;&quot;, line 1, in &lt;module&gt;
-        int(check_wind_dir(360))
-            ~~~~~~~~~~~~~~^^^^^
-      File &quot;C:\Users\c7151096\AppData\Local\Temp\ipykernel_292\2717570762.py&quot;, line 22, in check_wind_dir
-        direction = np.asanyarray(direction)
-                    ^^
-    NameError: name &#39;np&#39; is not defined
-**********************************************************************
-File &quot;__main__&quot;, line 19, in __main__.check_wind_dir
-Failed example:
-    print(check_wind_dir([-180, 90, 420]))
-Exception raised:
-    Traceback (most recent call last):
-      File &quot;C:\Users\c7151096\AppData\Local\miniforge3\envs\maps\Lib\doctest.py&quot;, line 1395, in __run
-        exec(compile(example.source, filename, &quot;single&quot;,
-        ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                     compileflags, True), test.globs)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-      File &quot;&lt;doctest __main__.check_wind_dir[2]&gt;&quot;, line 1, in &lt;module&gt;
-        print(check_wind_dir([-180, 90, 420]))
-              ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-      File &quot;C:\Users\c7151096\AppData\Local\Temp\ipykernel_292\2717570762.py&quot;, line 22, in check_wind_dir
-        direction = np.asanyarray(direction)
-                    ^^
-    NameError: name &#39;np&#39; is not defined
-<span class=" -Color -Color-Red">**********************************************************************</span>
-1 item had failures:
-   3 of   3 in __main__.check_wind_dir
-<span class=" -Color -Color-Bold -Color-Bold-Red">***Test Failed*** 3 failures</span>.
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestResults(failed=3, attempted=3)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestResults(failed=0, attempted=3)
 </pre></div>
 </div>
 </div>
@@ -774,67 +723,7 @@ Exception raised:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>**********************************************************************
-File &quot;__main__&quot;, line 15, in __main__.check_wind_dir
-Failed example:
-    int(check_wind_dir(0))
-Exception raised:
-    Traceback (most recent call last):
-      File &quot;C:\Users\c7151096\AppData\Local\miniforge3\envs\maps\Lib\doctest.py&quot;, line 1395, in __run
-        exec(compile(example.source, filename, &quot;single&quot;,
-        ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                     compileflags, True), test.globs)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-      File &quot;&lt;doctest __main__.check_wind_dir[0]&gt;&quot;, line 1, in &lt;module&gt;
-        int(check_wind_dir(0))
-            ~~~~~~~~~~~~~~^^^
-      File &quot;C:\Users\c7151096\AppData\Local\Temp\ipykernel_292\2717570762.py&quot;, line 22, in check_wind_dir
-        direction = np.asanyarray(direction)
-                    ^^
-    NameError: name &#39;np&#39; is not defined
-**********************************************************************
-File &quot;__main__&quot;, line 17, in __main__.check_wind_dir
-Failed example:
-    int(check_wind_dir(360))
-Exception raised:
-    Traceback (most recent call last):
-      File &quot;C:\Users\c7151096\AppData\Local\miniforge3\envs\maps\Lib\doctest.py&quot;, line 1395, in __run
-        exec(compile(example.source, filename, &quot;single&quot;,
-        ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                     compileflags, True), test.globs)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-      File &quot;&lt;doctest __main__.check_wind_dir[1]&gt;&quot;, line 1, in &lt;module&gt;
-        int(check_wind_dir(360))
-            ~~~~~~~~~~~~~~^^^^^
-      File &quot;C:\Users\c7151096\AppData\Local\Temp\ipykernel_292\2717570762.py&quot;, line 22, in check_wind_dir
-        direction = np.asanyarray(direction)
-                    ^^
-    NameError: name &#39;np&#39; is not defined
-**********************************************************************
-File &quot;__main__&quot;, line 19, in __main__.check_wind_dir
-Failed example:
-    print(check_wind_dir([-180, 90, 420]))
-Exception raised:
-    Traceback (most recent call last):
-      File &quot;C:\Users\c7151096\AppData\Local\miniforge3\envs\maps\Lib\doctest.py&quot;, line 1395, in __run
-        exec(compile(example.source, filename, &quot;single&quot;,
-        ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                     compileflags, True), test.globs)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-      File &quot;&lt;doctest __main__.check_wind_dir[2]&gt;&quot;, line 1, in &lt;module&gt;
-        print(check_wind_dir([-180, 90, 420]))
-              ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-      File &quot;C:\Users\c7151096\AppData\Local\Temp\ipykernel_292\2717570762.py&quot;, line 22, in check_wind_dir
-        direction = np.asanyarray(direction)
-                    ^^
-    NameError: name &#39;np&#39; is not defined
-<span class=" -Color -Color-Red">**********************************************************************</span>
-1 item had failures:
-   3 of   3 in __main__.check_wind_dir
-<span class=" -Color -Color-Bold -Color-Bold-Red">***Test Failed*** 3 failures</span>.
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestResults(failed=3, attempted=3)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestResults(failed=0, attempted=3)
 </pre></div>
 </div>
 </div>
