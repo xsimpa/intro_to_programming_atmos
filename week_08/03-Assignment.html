@@ -497,80 +497,93 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="assignment-08">
 <h1>Assignment 08<a class="headerlink" href="#assignment-08" title="Link to this heading">#</a></h1>
-<p><em>Due date: 24.05.2023</em></p>
+<p><em>Due date: 28.05.2025</em></p>
 <p>This week’s assignment has to be returned <strong>in the form a jupyter notebook</strong>.</p>
 <p>Don’t forget the <a class="reference internal" href="../assignments.html"><span class="doc std std-doc">instructions</span></a>!</p>
 <section id="data-preparation">
 <h2>01 - Data preparation<a class="headerlink" href="#data-preparation" title="Link to this heading">#</a></h2>
-<p>Rewrite the <code class="docutils literal notranslate"><span class="pre">acinn_meteo_data</span></code> function we used in <a class="reference internal" href="../week_05/04-Assignment.html"><span class="doc std std-doc">week 05</span></a> to return a pandas dataframe instead of individual arrays. When creating the dataframe, rename the column as follows:</p>
+<p>Rewrite the <code class="docutils literal notranslate"><span class="pre">geosphere_meteo_data</span></code> function we used in <a class="reference internal" href="../week_05/04-Assignment.html"><span class="doc std std-doc">week 05</span></a> to return a pandas dataframe instead of individual arrays. When creating the dataframe, rename the column as follows:</p>
 <ul class="simple">
-<li><p>“rr” -&gt; “rainfall” (invalid: &lt; 0)</p></li>
-<li><p>“dd” -&gt; “wind_dir” (invalid: &lt; 0)</p></li>
-<li><p>“ff” -&gt; “wind_speed” (invalid: &lt; 0)</p></li>
-<li><p>“tp” -&gt; “dewpoint” (invalid: &lt; -50)</p></li>
-<li><p>“p” -&gt; “pressure” (invalid: &lt; 500)</p></li>
-<li><p>“tl” -&gt; “temperature” (invalid: &lt; -50)</p></li>
-<li><p>“so” -&gt; “sunshine_min” (invalid: &lt; 0)</p></li>
-<li><p>“rf” -&gt; “relative_humidity” (invalid: &lt; 0)</p></li>
+<li><p>“RR” -&gt; “rainfall” (invalid: &lt; 0)</p></li>
+<li><p>“DD” -&gt; “wind_dir” (invalid: &lt; 0)</p></li>
+<li><p>“FF” -&gt; “wind_speed” (invalid: &lt; 0)</p></li>
+<li><p>“TP” -&gt; “dewpoint” (invalid: &lt; -50)</p></li>
+<li><p>“P” -&gt; “pressure” (invalid: &lt; 500)</p></li>
+<li><p>“TL” -&gt; “temperature” (invalid: &lt; -50)</p></li>
+<li><p>“SO” -&gt; “sunshine_min” (invalid: &lt; 0)</p></li>
+<li><p>“RF” -&gt; “relative_humidity” (invalid: &lt; 0)</p></li>
 </ul>
-<p>You should ignore the <code class="docutils literal notranslate"><span class="pre">datumsec</span></code> key and instead use the converted time as <code class="docutils literal notranslate"><span class="pre">index</span></code> for the dataframe you’ll create. Not all stations have all the variables! Your algorithm should work regardless of if the variable is available or not.</p>
-<p>Filter for missing data before placing the data in the pandas dafaframe: replace <strong>all values which are below the invalid threshold in the list above with <code class="docutils literal notranslate"><span class="pre">np.nan</span></code></strong>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">acinn_meteo_data</span><span class="p">(</span><span class="n">station</span><span class="o">=</span><span class="s2">&quot;innsbruck&quot;</span><span class="p">,</span> <span class="n">ndays</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse live meteorological data from the ACINN servers.</span>
+<p>Replace <strong>all values which are below the invalid threshold in the list above with <code class="docutils literal notranslate"><span class="pre">np.nan</span></code></strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">doctest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">urllib.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 
-<span class="sd">    Requires an internet connection and the pandas library!</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">geosphere_meteo_data</span><span class="p">(</span><span class="n">station</span><span class="o">=</span><span class="s2">&quot;11320&quot;</span><span class="p">,</span> <span class="n">parameters</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;TL&quot;</span><span class="p">,</span> <span class="s2">&quot;FF&quot;</span><span class="p">,</span> <span class="s2">&quot;RR&quot;</span><span class="p">],</span> <span class="n">ndays</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fetch live meteorological data from Geosphere server.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    station : str</span>
-<span class="sd">        one of &quot;innsbruck&quot;, &quot;obergurgl&quot;</span>
-<span class="sd">    ndays : int</span>
-<span class="sd">        either 3 or 7 days</span>
+<span class="sd">    station : str, optional</span>
+<span class="sd">        Station: &quot;11803&quot; for Innsbruck, &quot;17301&quot; for Obergurgl). Default is &quot;11803&quot;.</span>
+<span class="sd">        </span>
+<span class="sd">    parameters : list of str, optional</span>
+<span class="sd">        List of weather parameters to retrieve. Default is [&quot;TL&quot;, &quot;RR&quot;].</span>
+<span class="sd">        Available parameters:</span>
+<span class="sd">        - &quot;RR&quot; : &quot;rainfall&quot;</span>
+<span class="sd">        - &quot;DD&quot; : &quot;wind_dir&quot;</span>
+<span class="sd">        - &quot;FF&quot; : &quot;wind_speed&quot;</span>
+<span class="sd">        - &quot;TP&quot; : &quot;dewpoint&quot;</span>
+<span class="sd">        - &quot;P&quot; : &quot;pressure&quot;</span>
+<span class="sd">        - &quot;TL&quot; : &quot;temperature&quot;</span>
+<span class="sd">        - &quot;SO&quot; : &quot;sunshine_min&quot;</span>
+<span class="sd">        - &quot;RF&quot; : &quot;relative_humidity&quot;</span>
+<span class="sd">        </span>
+<span class="sd">    ndays : int, optional</span>
+<span class="sd">        Number of days to retrieve data for. Default is 3 days.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    df : pd.DataFrame</span>
-<span class="sd">        the meteorological data in a pandas dataframe</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        DataFrame containing the meteorological data.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; df = acinn_meteo_data()</span>
-<span class="sd">    &gt;&gt;&gt; type(df)</span>
-<span class="sd">    &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;</span>
-<span class="sd">    &gt;&gt;&gt; type(df.index)</span>
-<span class="sd">    &lt;class &#39;pandas.core.indexes.datetimes.DatetimeIndex&#39;&gt;</span>
-<span class="sd">    &gt;&gt;&gt; len(df.columns)</span>
-<span class="sd">    7</span>
-<span class="sd">    &gt;&gt;&gt; df[&#39;temperature&#39;].dtype</span>
-<span class="sd">    dtype(&#39;float64&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; df = geosphere_meteo_data()</span>
+<span class="sd">    &gt;&gt;&gt; isinstance(df, pd.DataFrame)</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; isinstance(df.index, pd.DatetimeIndex)</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; df[&#39;temperature&#39;].dtype == np.float64</span>
+<span class="sd">    True</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">urllib.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 
-    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://acinn-data.uibk.ac.at/</span><span class="si">{</span><span class="n">station</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">ndays</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="c1"># Calculate date range for the query</span>
+    <span class="n">end_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">start_date</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">ndays</span><span class="p">))</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Create query URL</span>
+    <span class="n">param_str</span> <span class="o">=</span> <span class="s2">&quot;%2C&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;https://dataset.api.hub.geosphere.at/v1/station/historical/tawes-v1-10min?&#39;</span>
+           <span class="sa">f</span><span class="s1">&#39;parameters=</span><span class="si">{</span><span class="n">param_str</span><span class="si">}</span><span class="s1">&amp;start=</span><span class="si">{</span><span class="n">start_date</span><span class="si">}</span><span class="s1">T00%3A00&amp;end=</span><span class="si">{</span><span class="n">end_date</span><span class="si">}</span><span class="s1">T00%3A00&amp;&#39;</span>
+           <span class="sa">f</span><span class="s1">&#39;station_ids=</span><span class="si">{</span><span class="n">station</span><span class="si">}</span><span class="s1">&amp;output_format=geojson&#39;</span><span class="p">)</span>
+
     <span class="n">req</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="c1"># Read the data</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
-
-    <span class="c1"># Convert the time</span>
-    <span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1970</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">milliseconds</span><span class="o">=</span><span class="n">ds</span><span class="p">)</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;datumsec&#39;</span><span class="p">]]</span>
     
+    <span class="c1"># Convert the time    </span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">ds</span><span class="p">[:</span><span class="o">-</span><span class="mi">6</span><span class="p">])</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;timestamps&#39;</span><span class="p">]])</span>
+    
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">time</span><span class="p">))</span>
+
     <span class="o">&lt;</span><span class="n">your</span> <span class="n">code</span> <span class="n">here</span><span class="o">&gt;</span>
+     
 </pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#your code here</span>
 </pre></div>
 </div>
 </div>
@@ -664,9 +677,9 @@ document.write(`
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; check_wind_dir(0)</span>
+<span class="sd">    &gt;&gt;&gt; int(check_wind_dir(0))</span>
 <span class="sd">    0</span>
-<span class="sd">    &gt;&gt;&gt; check_wind_dir(360)</span>
+<span class="sd">    &gt;&gt;&gt; int(check_wind_dir(360))</span>
 <span class="sd">    0</span>
 <span class="sd">    &gt;&gt;&gt; print(check_wind_dir([-180, 90, 420]))</span>
 <span class="sd">    [180  90  60]</span>
@@ -685,26 +698,64 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>**********************************************************************
 File &quot;__main__&quot;, line 15, in __main__.check_wind_dir
 Failed example:
-    check_wind_dir(0)
-Expected:
-    0
-Got:
-    np.int64(0)
+    int(check_wind_dir(0))
+Exception raised:
+    Traceback (most recent call last):
+      File &quot;C:\Users\c7151096\AppData\Local\miniforge3\envs\maps\Lib\doctest.py&quot;, line 1395, in __run
+        exec(compile(example.source, filename, &quot;single&quot;,
+        ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     compileflags, True), test.globs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File &quot;&lt;doctest __main__.check_wind_dir[0]&gt;&quot;, line 1, in &lt;module&gt;
+        int(check_wind_dir(0))
+            ~~~~~~~~~~~~~~^^^
+      File &quot;C:\Users\c7151096\AppData\Local\Temp\ipykernel_292\2717570762.py&quot;, line 22, in check_wind_dir
+        direction = np.asanyarray(direction)
+                    ^^
+    NameError: name &#39;np&#39; is not defined
 **********************************************************************
 File &quot;__main__&quot;, line 17, in __main__.check_wind_dir
 Failed example:
-    check_wind_dir(360)
-Expected:
-    0
-Got:
-    np.int64(0)
+    int(check_wind_dir(360))
+Exception raised:
+    Traceback (most recent call last):
+      File &quot;C:\Users\c7151096\AppData\Local\miniforge3\envs\maps\Lib\doctest.py&quot;, line 1395, in __run
+        exec(compile(example.source, filename, &quot;single&quot;,
+        ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     compileflags, True), test.globs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File &quot;&lt;doctest __main__.check_wind_dir[1]&gt;&quot;, line 1, in &lt;module&gt;
+        int(check_wind_dir(360))
+            ~~~~~~~~~~~~~~^^^^^
+      File &quot;C:\Users\c7151096\AppData\Local\Temp\ipykernel_292\2717570762.py&quot;, line 22, in check_wind_dir
+        direction = np.asanyarray(direction)
+                    ^^
+    NameError: name &#39;np&#39; is not defined
 **********************************************************************
-1 items had failures:
-   2 of   3 in __main__.check_wind_dir
-***Test Failed*** 2 failures.
+File &quot;__main__&quot;, line 19, in __main__.check_wind_dir
+Failed example:
+    print(check_wind_dir([-180, 90, 420]))
+Exception raised:
+    Traceback (most recent call last):
+      File &quot;C:\Users\c7151096\AppData\Local\miniforge3\envs\maps\Lib\doctest.py&quot;, line 1395, in __run
+        exec(compile(example.source, filename, &quot;single&quot;,
+        ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     compileflags, True), test.globs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File &quot;&lt;doctest __main__.check_wind_dir[2]&gt;&quot;, line 1, in &lt;module&gt;
+        print(check_wind_dir([-180, 90, 420]))
+              ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+      File &quot;C:\Users\c7151096\AppData\Local\Temp\ipykernel_292\2717570762.py&quot;, line 22, in check_wind_dir
+        direction = np.asanyarray(direction)
+                    ^^
+    NameError: name &#39;np&#39; is not defined
+<span class=" -Color -Color-Red">**********************************************************************</span>
+1 item had failures:
+   3 of   3 in __main__.check_wind_dir
+<span class=" -Color -Color-Bold -Color-Bold-Red">***Test Failed*** 3 failures</span>.
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestResults(failed=2, attempted=3)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestResults(failed=3, attempted=3)
 </pre></div>
 </div>
 </div>
@@ -726,26 +777,64 @@ Got:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>**********************************************************************
 File &quot;__main__&quot;, line 15, in __main__.check_wind_dir
 Failed example:
-    check_wind_dir(0)
-Expected:
-    0
-Got:
-    np.int64(0)
+    int(check_wind_dir(0))
+Exception raised:
+    Traceback (most recent call last):
+      File &quot;C:\Users\c7151096\AppData\Local\miniforge3\envs\maps\Lib\doctest.py&quot;, line 1395, in __run
+        exec(compile(example.source, filename, &quot;single&quot;,
+        ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     compileflags, True), test.globs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File &quot;&lt;doctest __main__.check_wind_dir[0]&gt;&quot;, line 1, in &lt;module&gt;
+        int(check_wind_dir(0))
+            ~~~~~~~~~~~~~~^^^
+      File &quot;C:\Users\c7151096\AppData\Local\Temp\ipykernel_292\2717570762.py&quot;, line 22, in check_wind_dir
+        direction = np.asanyarray(direction)
+                    ^^
+    NameError: name &#39;np&#39; is not defined
 **********************************************************************
 File &quot;__main__&quot;, line 17, in __main__.check_wind_dir
 Failed example:
-    check_wind_dir(360)
-Expected:
-    0
-Got:
-    np.int64(0)
+    int(check_wind_dir(360))
+Exception raised:
+    Traceback (most recent call last):
+      File &quot;C:\Users\c7151096\AppData\Local\miniforge3\envs\maps\Lib\doctest.py&quot;, line 1395, in __run
+        exec(compile(example.source, filename, &quot;single&quot;,
+        ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     compileflags, True), test.globs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File &quot;&lt;doctest __main__.check_wind_dir[1]&gt;&quot;, line 1, in &lt;module&gt;
+        int(check_wind_dir(360))
+            ~~~~~~~~~~~~~~^^^^^
+      File &quot;C:\Users\c7151096\AppData\Local\Temp\ipykernel_292\2717570762.py&quot;, line 22, in check_wind_dir
+        direction = np.asanyarray(direction)
+                    ^^
+    NameError: name &#39;np&#39; is not defined
 **********************************************************************
-1 items had failures:
-   2 of   3 in __main__.check_wind_dir
-***Test Failed*** 2 failures.
+File &quot;__main__&quot;, line 19, in __main__.check_wind_dir
+Failed example:
+    print(check_wind_dir([-180, 90, 420]))
+Exception raised:
+    Traceback (most recent call last):
+      File &quot;C:\Users\c7151096\AppData\Local\miniforge3\envs\maps\Lib\doctest.py&quot;, line 1395, in __run
+        exec(compile(example.source, filename, &quot;single&quot;,
+        ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     compileflags, True), test.globs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File &quot;&lt;doctest __main__.check_wind_dir[2]&gt;&quot;, line 1, in &lt;module&gt;
+        print(check_wind_dir([-180, 90, 420]))
+              ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+      File &quot;C:\Users\c7151096\AppData\Local\Temp\ipykernel_292\2717570762.py&quot;, line 22, in check_wind_dir
+        direction = np.asanyarray(direction)
+                    ^^
+    NameError: name &#39;np&#39; is not defined
+<span class=" -Color -Color-Red">**********************************************************************</span>
+1 item had failures:
+   3 of   3 in __main__.check_wind_dir
+<span class=" -Color -Color-Bold -Color-Bold-Red">***Test Failed*** 3 failures</span>.
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestResults(failed=2, attempted=3)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestResults(failed=3, attempted=3)
 </pre></div>
 </div>
 </div>
