@@ -66,7 +66,7 @@
     <link rel="prev" title="Jupyter notebooks tips and tricks" href="02-jupyter-dos.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 26, 2025"/>
+    <meta name="docbuild:last-update" content="Jun 09, 2025"/>
   </head>
   
   
@@ -243,6 +243,16 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../project/project_instructions.html">Programming project</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 09 - Multidimensional arrays</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week_09/01-multidim-numpy.html">Multi-dimensional numpy arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_09/02-Assignment.html">Assignment 09</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 10 - Scientific python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week_10/01-scientific-python.html">Scientific python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_10/02-Assignment.html">Assignment 10</a></li>
 </ul>
 
     </div>
@@ -849,7 +859,7 @@ NumPy <strong>efficient calculations</strong> with arrays and matrices and it su
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([14,  6,  1,  8, 13,  2, 12,  3,  4,  7,  9, 11,  5, 10])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([11,  5,  8,  3,  7, 13, 14, 12, 10,  4,  2,  9,  6,  1])
 </pre></div>
 </div>
 </div>
@@ -863,7 +873,7 @@ NumPy <strong>efficient calculations</strong> with arrays and matrices and it su
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3, 4, 5])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5, 3, 4, 2, 1])
 </pre></div>
 </div>
 </div>
@@ -884,8 +894,8 @@ NumPy <strong>efficient calculations</strong> with arrays and matrices and it su
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False,  True, False, False,  True, False,  True,  True,
-       False, False, False,  True, False])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False,  True, False,  True, False, False, False, False, False,
+        True,  True, False, False,  True])
 </pre></div>
 </div>
 </div>
@@ -899,7 +909,7 @@ NumPy <strong>efficient calculations</strong> with arrays and matrices and it su
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3, 4, 5])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5, 3, 4, 2, 1])
 </pre></div>
 </div>
 </div>
@@ -913,7 +923,7 @@ NumPy <strong>efficient calculations</strong> with arrays and matrices and it su
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3, 4, 5])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5, 3, 4, 2, 1])
 </pre></div>
 </div>
 </div>
@@ -928,7 +938,7 @@ NumPy <strong>efficient calculations</strong> with arrays and matrices and it su
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 6,  8,  3,  4,  7,  9,  5, 10])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 5,  8,  3,  7, 10,  4,  9,  6])
 </pre></div>
 </div>
 </div>
@@ -1183,7 +1193,7 @@ NumPy <strong>efficient calculations</strong> with arrays and matrices and it su
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8ede89fef5f53814900a792efcd70946b57553d47d4943ff63ffe73c323d044e.png" src="../_images/8ede89fef5f53814900a792efcd70946b57553d47d4943ff63ffe73c323d044e.png" />
+<img alt="../_images/1e96827dde575a6c35adba95f294f9e7e4bac12cfbcacd3e9e3f4b5407a8084b.png" src="../_images/1e96827dde575a6c35adba95f294f9e7e4bac12cfbcacd3e9e3f4b5407a8084b.png" />
 </div>
 </div>
 </section>
@@ -1205,7 +1215,7 @@ NumPy <strong>efficient calculations</strong> with arrays and matrices and it su
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8ed1b242096ce46deaddac084e5546736cabfc03c9e7c80b6601975e388a646c.png" src="../_images/8ed1b242096ce46deaddac084e5546736cabfc03c9e7c80b6601975e388a646c.png" />
+<img alt="../_images/add58a23cb2675dd3b3d79d2bd498d188fb247e4bb12f1c12c29531646ce22d4.png" src="../_images/add58a23cb2675dd3b3d79d2bd498d188fb247e4bb12f1c12c29531646ce22d4.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1472,7 +1482,7 @@ By Patric Simões Pereira
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on May 26, 2025.
+  Last updated on Jun 09, 2025.
   <br/>
 </p>
   </div>
