@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -66,7 +66,7 @@
     <link rel="prev" title="Scientific python" href="01-scientific-python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="May 22, 2026"/>
+    <meta name="docbuild:last-update" content="Jun 05, 2026"/>
   </head>
   
   
@@ -263,10 +263,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../cookbook/reading_geotiff_files.html">Reading netCDF files with xarray</a></li>
 </ul>
 </details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Previous exams</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../exams/exam23.html">Correction of the exam 2023</a></li>
 </ul>
 
     </div>
@@ -535,10 +531,10 @@ document.write(`
 <li><p>the location and elevation of all stations is read from the <code class="docutils literal notranslate"><span class="pre">ZEHNMIN</span> <span class="pre">Stations-Metadaten.csv</span></code> file that you can download <a class="reference external" href="https://github.com/fmaussion/intro_to_programming/raw/master/book/project/ZEHNMIN%20Stations-Metadaten.csv">here</a>. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> can read it without any problems.</p></li>
 <li><p>the map is done with matplotlib and cartopy. I build my map based on elements from the following tutorials from the <a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/gallery/index.html">official documentation</a>:</p>
 <ul>
-<li><p><a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/gallery/scalar_data/eyja_volcano.html#sphx-glr-gallery-scalar-data-eyja-volcano-py">map tile aquisition</a> for the map background</p></li>
-<li><p><a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/gallery/lines_and_polygons/features.html#sphx-glr-gallery-lines-and-polygons-features-py">features</a> for the country borders</p></li>
-<li><p><a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/gallery/gridlines_and_labels/gridliner.html#sphx-glr-gallery-gridlines-and-labels-gridliner-py">grid lines and tick labels</a> for the lat lon grid</p></li>
-<li><p>matplotlib’s <code class="docutils literal notranslate"><span class="pre">ax.scatterplot</span></code> (or <code class="docutils literal notranslate"><span class="pre">ax.plot</span></code> as in the <a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/gallery/scalar_data/eyja_volcano.html#sphx-glr-gallery-scalar-data-eyja-volcano-py">Iceland example</a>) for the station markers, and <code class="docutils literal notranslate"><span class="pre">ax.legend</span></code> for the legend.</p></li>
+<li><p><a class="reference external" href="https://cartopy.readthedocs.io/stable/gallery/scalar_data/eyja_volcano.html">map tile aquisition</a> for the map background</p></li>
+<li><p><a class="reference external" href="https://cartopy.readthedocs.io/stable/gallery/lines_and_polygons/features.html">features</a> for the country borders</p></li>
+<li><p><a class="reference external" href="https://scitools.org.uk/cartopy/docs/v0.13/matplotlib/gridliner.html">grid lines and tick labels</a> for the lat lon grid</p></li>
+<li><p>matplotlib’s <code class="docutils literal notranslate"><span class="pre">ax.scatterplot</span></code> for the station markers, and <code class="docutils literal notranslate"><span class="pre">ax.legend</span></code> for the legend.</p></li>
 </ul>
 </li>
 </ul>
@@ -657,7 +653,7 @@ By Patric Simões Pereira
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on May 22, 2026.
+  Last updated on Jun 05, 2026.
   <br/>
 </p>
   </div>

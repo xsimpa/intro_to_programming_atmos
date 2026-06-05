@@ -48,9 +48,9 @@ I strongly recommend to work regularly for the class. Programming is quite diffe
 
 The lecture will be graded based on four elements:
 1. **participation to the weekly assignments** (mandatory but not graded)
-1. **mid-term exam: 10%** (Tue 2025-05-06)
+1. **mid-term exam: 10%** (Tue 2026-05-12)
 2. **a programming project at the end of the semester: 30%** (in group)
-3. **final exam at the end of the semester: 60%** (Tue 2025-06-24)
+3. **final exam at the end of the semester: 60%** (Tue 2026-06-23)
 
 A positive evaluation of each of these elements is mandatory to pass the class!
 
@@ -64,11 +64,11 @@ At the end of the semester, you will be given a programming project to realize o
 
 **Mid-term exam**
 
-The mid-term exam (~45', OLAT-exam with presence in class) will take place on **Tue 2025-05-06 at 08:15**.
+The mid-term exam (~45', OLAT-exam with presence in class) will take place on **Tue 2026-05-12 at 08:15**.
 
 **Exam**
 
-The final exam (~90', OLAT-exam with presence in class) will take place on **Tue 2025-06-24 at 08:15**.
+The final exam (~90', OLAT-exam with presence in class) will take place on **Tue 2026-06-23 at 08:15**.
 
 
 ## Weekly lesson plan 
@@ -129,6 +129,6 @@ The first half of the class will be heavily based on the "[Python for Everybody 
     - [Scientific python](week_10/01-scientific-python)
     - [Recipes](cookbook/intro)
     
-**Final exam: 30.06.2026**
+**Final exam: 23.06.2026**
 
 You will notice that there are 10 weekly units for a 15 weeks long semester: this is expected since some weeks contain holidays or I am traveling. Furthermore, some weeks will be kept free to work on your projects or learn for the exams.
